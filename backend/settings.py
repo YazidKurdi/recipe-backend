@@ -78,8 +78,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'backend.urls'
 
-LOGIN_REDIRECT_URL = '/app/'
-LOGIN_URL = '/app/admin/login/'
 
 TEMPLATES = [
     {
@@ -231,3 +229,5 @@ LOGGING = {
         }
     },
 }
+
+FORCE_SCRIPT_NAME = '/app'
