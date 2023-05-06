@@ -6,7 +6,7 @@ from accounts.views import GoogleLogin #FacebookLogin, GithubLogin
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('app/admin/', admin.site.urls),
     path('api/', include('recipes.urls')),
     path('api/', include('chefgpt.urls')),
     path('dj-rest-auth/', include('dj_rest_auth.urls')),
