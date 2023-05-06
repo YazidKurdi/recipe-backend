@@ -78,6 +78,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'backend.urls'
 
+FORCE_SCRIPT_NAME = "/app"
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
