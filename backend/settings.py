@@ -78,7 +78,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'backend.urls'
 
-FORCE_SCRIPT_NAME = "/app"
 
 TEMPLATES = [
     {
