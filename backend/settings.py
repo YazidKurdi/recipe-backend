@@ -187,8 +187,6 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 
 CORS_EXPOSE_HEADERS = ['X-Total-Count']
 
-SESSION_COOKIE_NAME = 'site2'
-
 
 
 
