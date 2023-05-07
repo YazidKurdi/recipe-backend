@@ -77,7 +77,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'backend.urls'
 
-SESSION_COOKIE_DOMAIN = "https://recipe-xaoo6.ondigitalocean.app/app/admin/"
+SESSION_COOKIE_DOMAIN = "https://recipe-xaoo6.ondigitalocean.app"
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 TEMPLATES = [
