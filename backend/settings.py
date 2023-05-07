@@ -77,8 +77,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'backend.urls'
 
-SESSION_COOKIE_DOMAIN = "recipe-xaoo6.ondigitalocean.app"
-SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+# SESSION_COOKIE_DOMAIN = "recipe-xaoo6.ondigitalocean.app"
+# SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 TEMPLATES = [
     {
@@ -124,7 +124,7 @@ AUTHENTICATION_BACKENDS = [
 ]
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     ],
     'DEFAULT_THROTTLE_CLASSES': [
