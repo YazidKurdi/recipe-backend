@@ -36,7 +36,7 @@ ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1, localhost").split(
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    # 'django.contrib.sites',
+    'django.contrib.sites',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     'chefgpt'
 ]
 
-# SITE_ID = 1
+SITE_ID = 1
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
