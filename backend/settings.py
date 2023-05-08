@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
-CSRF_TRUSTED_ORIGINS = ["https://recipe-xaoo6.ondigitalocean.app/"]
+# CSRF_TRUSTED_ORIGINS = ["https://recipe-xaoo6.ondigitalocean.app/"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "True") == "True"
@@ -59,11 +59,11 @@ INSTALLED_APPS = [
     'chefgpt'
 ]
 
-SITE_ID = 1
+# SITE_ID = 1
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8080",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:8080",
+# ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -109,37 +109,37 @@ DATABASES = {
     }
 }
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_VERIFICATION = 'optional'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_AUTHENTICATION_METHOD = 'email'
+# ACCOUNT_EMAIL_VERIFICATION = 'optional'
 
-AUTHENTICATION_BACKENDS = [
+# AUTHENTICATION_BACKENDS = [
+#
+#     # Needed to login by username in Django admin, regardless of allauth
+#     'django.contrib.auth.backends.ModelBackend',
+#
+#     # allauth specific authentication methods, such as login by e-mail
+#     'allauth.account.auth_backends.AuthenticationBackend',
+#
+# ]
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         # 'rest_framework.authentication.SessionAuthentication',
+#         'rest_framework.authentication.TokenAuthentication',
+#     ],
+#     'DEFAULT_THROTTLE_CLASSES': [
+#         'rest_framework.throttling.ScopedRateThrottle'
+#     ],
+#     'DEFAULT_THROTTLE_RATES': {
+#         'chef_gpt': '10/day',
+#         'dj_rest_auth': '10000/day'
+#     }
+# }
 
-    # Needed to login by username in Django admin, regardless of allauth
-    'django.contrib.auth.backends.ModelBackend',
-
-    # allauth specific authentication methods, such as login by e-mail
-    'allauth.account.auth_backends.AuthenticationBackend',
-
-]
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        # 'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.TokenAuthentication',
-    ],
-    'DEFAULT_THROTTLE_CLASSES': [
-        'rest_framework.throttling.ScopedRateThrottle'
-    ],
-    'DEFAULT_THROTTLE_RATES': {
-        'chef_gpt': '10/day',
-        'dj_rest_auth': '10000/day'
-    }
-}
-
-SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
-SOCIALACCOUNT_EMAIL_REQUIRED = False
-SOCIALACCOUNT_QUERY_EMAIL = True
+# SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
+# SOCIALACCOUNT_EMAIL_REQUIRED = False
+# SOCIALACCOUNT_QUERY_EMAIL = True
 
 ##Facebook Keys
 # SOCIAL_AUTH_FACEBOOK_KEY = os.getenv('SOCIAL_AUTH_FACEBOOK_KEY')
@@ -187,46 +187,46 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
 
-CORS_EXPOSE_HEADERS = ['X-Total-Count']
+# CORS_EXPOSE_HEADERS = ['X-Total-Count']
 
 
 
 
-LOG_LEVEL = os.environ.get('LOG_LEVEL', 'INFO')
-LOG_DIR = os.path.join(BASE_DIR, 'logs')
-
-if not os.path.exists(LOG_DIR):
-    os.mkdir(LOG_DIR)
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'standard': {
-            'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
-        },
-    },
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-            'level': LOG_LEVEL,
-            'formatter': 'standard'
-        },
-        'file': {
-            'class': 'logging.FileHandler',
-            'filename': os.path.join(LOG_DIR, 'django.log'),
-            'level': LOG_LEVEL,
-            'formatter': 'standard'
-        },
-    },
-    'loggers': {
-        'main': {
-            'handlers': ['console', 'file'],
-            'level': LOG_LEVEL,
-            'propagate': True,
-        }
-    },
-}
+# LOG_LEVEL = os.environ.get('LOG_LEVEL', 'INFO')
+# LOG_DIR = os.path.join(BASE_DIR, 'logs')
+#
+# if not os.path.exists(LOG_DIR):
+#     os.mkdir(LOG_DIR)
+#
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'formatters': {
+#         'standard': {
+#             'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+#         },
+#     },
+#     'handlers': {
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#             'level': LOG_LEVEL,
+#             'formatter': 'standard'
+#         },
+#         'file': {
+#             'class': 'logging.FileHandler',
+#             'filename': os.path.join(LOG_DIR, 'django.log'),
+#             'level': LOG_LEVEL,
+#             'formatter': 'standard'
+#         },
+#     },
+#     'loggers': {
+#         'main': {
+#             'handlers': ['console', 'file'],
+#             'level': LOG_LEVEL,
+#             'propagate': True,
+#         }
+#     },
+# }
 
 #
 # if not DEBUG:
