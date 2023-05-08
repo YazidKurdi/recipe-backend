@@ -13,5 +13,5 @@ urlpatterns = [
     # path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
     # path('dj-rest-auth/google/', GoogleLogin.as_view(), name='github_login'),
     # path('accounts/', include('allauth.urls'), name='socialaccount_signup'),
-    path('',include('accounts.urls'))
+    # path('',include('accounts.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
