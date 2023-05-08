@@ -1,24 +1,24 @@
-# from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
-# from allauth.socialaccount.providers.github.views import GitHubOAuth2Adapter
-# from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
-# from allauth.socialaccount.providers.oauth2.client import OAuth2Client, OAuth2Error
-# from dj_rest_auth.registration.views import SocialLoginView
-# from rest_framework.authentication import TokenAuthentication
-# from rest_framework.permissions import IsAuthenticated
-# from rest_framework.response import Response
-# from rest_framework.views import APIView
-#
-# class GoogleLogin(SocialLoginView):  # if you want to use Authorization Code Grant, use this
-#     adapter_class = GoogleOAuth2Adapter
-#     callback_url = "http://127.0.0.1:8000/accounts/google/login/callback/"
-#     client_class = OAuth2Client
-# class GetUserIdView(APIView):
-#     authentication_classes = [TokenAuthentication]
-#     permission_classes = [IsAuthenticated]
-#
-#     def get(self, request):
-#         user_id = request.user.id
-#         return Response({'user_id': user_id})
+from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
+from allauth.socialaccount.providers.github.views import GitHubOAuth2Adapter
+from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
+from allauth.socialaccount.providers.oauth2.client import OAuth2Client, OAuth2Error
+from dj_rest_auth.registration.views import SocialLoginView
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+class GoogleLogin(SocialLoginView):  # if you want to use Authorization Code Grant, use this
+    adapter_class = GoogleOAuth2Adapter
+    callback_url = "http://127.0.0.1:8000/accounts/google/login/callback/"
+    client_class = OAuth2Client
+class GetUserIdView(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user_id = request.user.id
+        return Response({'user_id': user_id})
 
 
 # class FacebookLogin(SocialLoginView):

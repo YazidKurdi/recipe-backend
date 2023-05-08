@@ -55,8 +55,8 @@ INSTALLED_APPS = [
     # 'corsheaders',
     # # local apps
     'recipes',
-    # 'accounts',
-    # 'chefgpt'
+    'accounts',
+    'chefgpt'
 ]
 
 # SITE_ID = 1
