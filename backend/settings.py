@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     'chefgpt'
 ]
 
-# SITE_ID = 1
+SITE_ID = 1
 
 # CORS_ALLOWED_ORIGINS = [
 #     "http://localhost:8080",
