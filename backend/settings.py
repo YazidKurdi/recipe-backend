@@ -187,46 +187,45 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
 
-# CORS_EXPOSE_HEADERS = ['X-Total-Count']
+CORS_EXPOSE_HEADERS = ['X-Total-Count']
 
 
 
+LOG_LEVEL = os.environ.get('LOG_LEVEL', 'INFO')
+LOG_DIR = os.path.join(BASE_DIR, 'logs')
 
-# LOG_LEVEL = os.environ.get('LOG_LEVEL', 'INFO')
-# LOG_DIR = os.path.join(BASE_DIR, 'logs')
-#
-# if not os.path.exists(LOG_DIR):
-#     os.mkdir(LOG_DIR)
-#
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'formatters': {
-#         'standard': {
-#             'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
-#         },
-#     },
-#     'handlers': {
-#         'console': {
-#             'class': 'logging.StreamHandler',
-#             'level': LOG_LEVEL,
-#             'formatter': 'standard'
-#         },
-#         'file': {
-#             'class': 'logging.FileHandler',
-#             'filename': os.path.join(LOG_DIR, 'django.log'),
-#             'level': LOG_LEVEL,
-#             'formatter': 'standard'
-#         },
-#     },
-#     'loggers': {
-#         'main': {
-#             'handlers': ['console', 'file'],
-#             'level': LOG_LEVEL,
-#             'propagate': True,
-#         }
-#     },
-# }
+if not os.path.exists(LOG_DIR):
+    os.mkdir(LOG_DIR)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'standard': {
+            'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'level': LOG_LEVEL,
+            'formatter': 'standard'
+        },
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(LOG_DIR, 'django.log'),
+            'level': LOG_LEVEL,
+            'formatter': 'standard'
+        },
+    },
+    'loggers': {
+        'main': {
+            'handlers': ['console', 'file'],
+            'level': LOG_LEVEL,
+            'propagate': True,
+        }
+    },
+}
 
 #
 # if not DEBUG:
