@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     # 'allauth.socialaccount.providers.google',
     # 'corsheaders',
     # # local apps
-    # 'recipes',
+    'recipes',
     # 'accounts',
     # 'chefgpt'
 ]
