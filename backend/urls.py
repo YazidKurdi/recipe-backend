@@ -7,8 +7,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('recipes.urls')),
-    path('api/', include('chefgpt.urls')),
+    # path('api/', include('recipes.urls')),
+    # path('api/', include('chefgpt.urls')),
     # path('dj-rest-auth/', include('dj_rest_auth.urls')),
     # path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
     # path('dj-rest-auth/google/', GoogleLogin.as_view(), name='github_login'),
