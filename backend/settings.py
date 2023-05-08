@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
-CSRF_TRUSTED_ORIGINS = ["recipe-xaoo6.ondigitalocean.app"]
+CSRF_TRUSTED_ORIGINS = ["https://recipe-xaoo6.ondigitalocean.app"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "True") == "True"
