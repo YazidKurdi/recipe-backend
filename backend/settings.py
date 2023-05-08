@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
+SECRET_KEY = '123' #os.getenv("DJANGO_SECRET_KEY")
 # CSRF_TRUSTED_ORIGINS = ["https://recipe-xaoo6.ondigitalocean.app/"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -52,14 +52,14 @@ INSTALLED_APPS = [
     # 'dj_rest_auth.registration',
     # 'allauth.socialaccount.providers.facebook',
     # 'allauth.socialaccount.providers.google',
-    'corsheaders',
-    # local apps
-    'recipes',
-    'accounts',
-    'chefgpt'
+    # 'corsheaders',
+    # # local apps
+    # 'recipes',
+    # 'accounts',
+    # 'chefgpt'
 ]
 
-SITE_ID = 1
+# SITE_ID = 1
 
 # CORS_ALLOWED_ORIGINS = [
 #     "http://localhost:8080",
