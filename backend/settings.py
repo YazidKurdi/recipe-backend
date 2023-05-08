@@ -114,32 +114,32 @@ DATABASES = {
 # ACCOUNT_AUTHENTICATION_METHOD = 'email'
 # ACCOUNT_EMAIL_VERIFICATION = 'optional'
 
-# AUTHENTICATION_BACKENDS = [
-#
-#     # Needed to login by username in Django admin, regardless of allauth
-#     'django.contrib.auth.backends.ModelBackend',
-#
-#     # allauth specific authentication methods, such as login by e-mail
-#     'allauth.account.auth_backends.AuthenticationBackend',
-#
-# ]
-# REST_FRAMEWORK = {
-#     'DEFAULT_AUTHENTICATION_CLASSES': [
-#         # 'rest_framework.authentication.SessionAuthentication',
-#         'rest_framework.authentication.TokenAuthentication',
-#     ],
-#     'DEFAULT_THROTTLE_CLASSES': [
-#         'rest_framework.throttling.ScopedRateThrottle'
-#     ],
-#     'DEFAULT_THROTTLE_RATES': {
-#         'chef_gpt': '10/day',
-#         'dj_rest_auth': '10000/day'
-#     }
-# }
+AUTHENTICATION_BACKENDS = [
 
-# SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
-# SOCIALACCOUNT_EMAIL_REQUIRED = False
-# SOCIALACCOUNT_QUERY_EMAIL = True
+    # Needed to login by username in Django admin, regardless of allauth
+    'django.contrib.auth.backends.ModelBackend',
+
+    # allauth specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+
+]
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # 'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.ScopedRateThrottle'
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'chef_gpt': '10/day',
+        'dj_rest_auth': '10000/day'
+    }
+}
+
+SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
+SOCIALACCOUNT_EMAIL_REQUIRED = False
+SOCIALACCOUNT_QUERY_EMAIL = True
 
 ##Facebook Keys
 # SOCIAL_AUTH_FACEBOOK_KEY = os.getenv('SOCIAL_AUTH_FACEBOOK_KEY')
