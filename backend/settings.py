@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '123' #os.getenv("DJANGO_SECRET_KEY")
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 # CSRF_TRUSTED_ORIGINS = ["https://recipe-xaoo6.ondigitalocean.app/"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -227,9 +227,9 @@ LOGGING = {
     },
 }
 
-#
-# if not DEBUG:
-#     FORCE_SCRIPT_NAME = '/app'
+
+if not DEBUG:
+    FORCE_SCRIPT_NAME = '/app'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
