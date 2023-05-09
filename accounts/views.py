@@ -1,3 +1,5 @@
+import os
+
 from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
 from allauth.socialaccount.providers.github.views import GitHubOAuth2Adapter
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
@@ -10,7 +12,7 @@ from rest_framework.views import APIView
 
 class GoogleLogin(SocialLoginView):  # if you want to use Authorization Code Grant, use this
     adapter_class = GoogleOAuth2Adapter
-    callback_url = "http://127.0.0.1:8000/accounts/google/login/callback/"
+    callback_url = f'{os.getenv("DJANGO_ALLOWED_HOSTS", "http://127.0.0.1:8000/")}accounts/google/login/callback/'
     client_class = OAuth2Client
 class GetUserIdView(APIView):
     authentication_classes = [TokenAuthentication]
