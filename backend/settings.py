@@ -230,7 +230,7 @@ LOGGING = {
 if not DEBUG:
     FORCE_SCRIPT_NAME = '/app'
 
-MEDIA_URL = 'app/media/'
+MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'app/media/'
 
 # Static files (CSS, JavaScript, Images)
