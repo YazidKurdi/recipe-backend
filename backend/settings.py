@@ -230,8 +230,8 @@ LOGGING = {
 if not DEBUG:
     FORCE_SCRIPT_NAME = '/app'
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'app/app/media')
+MEDIA_URL = 'static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
