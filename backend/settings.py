@@ -9,9 +9,11 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import sys
 from pathlib import Path
 from urllib.parse import urlparse
+
+import dj_database_url
 import dotenv
 import os
 
@@ -110,17 +112,12 @@ if DEBUG:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-else:
-    r = urlparse(os.environ.get("DATABASE_URL"))
+elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
+    if os.getenv("DATABASE_URL", None) is None:
+        raise Exception("DATABASE_URL environment variable not defined")
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME' : os.path.relpath(r.path,"/"),
-            'USER' : r.username,
-            'PASSWORD' : r.password,
-            'HOST' : r.hostname,
-            'PORT' : r.port,
-        }}
+        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+    }
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_EMAIL_REQUIRED = True
