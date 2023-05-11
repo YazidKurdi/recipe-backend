@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import dotenv
 import os
+import dj_database_url
 
 dotenv.load_dotenv()
 
@@ -111,14 +112,7 @@ if DEBUG:
     }
 else:
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.getenv("POSTGRES_DB"),
-            'USER': os.getenv("POSTGRES_USER"),
-            'PASSWORD': os.getenv("POSTGRES_PASSWORD"),
-            'HOST': os.getenv("POSTGRES_HOST"),
-            'PORT': os.getenv("POSTGRES_PORT"),
-        }
+        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
     }
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
