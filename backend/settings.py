@@ -11,9 +11,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from urllib.parse import urlparse
 import dotenv
 import os
-import dj_database_url
 
 dotenv.load_dotenv()
 
@@ -111,9 +111,16 @@ if DEBUG:
         }
     }
 else:
+    r = urlparse(os.environ.get("DATABASE_URL"))
     DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
-    }
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME' : os.path.relpath(r.path,"/"),
+            'USER' : r.username,
+            'PASSWORD' : r.password,
+            'HOST' : r.hostname,
+            'PORT' : r.port,
+        }}
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_EMAIL_REQUIRED = True
