@@ -15,7 +15,7 @@ def get_recipe(recipe):
                    "content": "You are a professional chef who is brought to a restaurant. The restaurant has been preparing the same recipes for a while,\
                     you are tasked to change how an existing recipe is prepared. Be creative and try to create a twist on the existing recipe.\
                     Your response should be strictly a JSON object with no trailing/starting pleasantries.\
-                    Format the answer as a json object with the following stucture:\
+                    Format the answer as a json object with the following structure:\
                     {{  'description': content,\
                         'ingredients': content (array),\
                     }}\
