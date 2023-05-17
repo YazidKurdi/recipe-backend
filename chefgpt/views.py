@@ -11,7 +11,7 @@ from rest_framework.permissions import IsAuthenticated
 
 from chefgpt import utils
 
-logger = logging.getLogger("main")
+logger = logging.getLogger("chefgpt")
 class ChefGPT(APIView):
     """
     API endpoint that generates recipes based on a given prompt using GPT-3.

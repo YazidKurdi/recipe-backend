@@ -19,7 +19,6 @@ import os
 
 dotenv.load_dotenv()
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -33,7 +32,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "True") == "True"
 
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1, localhost").split(",")
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 # Application definition
 
@@ -184,8 +183,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-
 # # Extra places for collectstatic to find static files.
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, 'frontend/build/static'))
 
@@ -194,11 +191,7 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-
 CORS_EXPOSE_HEADERS = ['X-Total-Count']
-
-
 
 LOG_LEVEL = os.environ.get('LOG_LEVEL', 'INFO')
 LOG_DIR = os.path.join(BASE_DIR, 'logs')
@@ -228,14 +221,18 @@ LOGGING = {
         },
     },
     'loggers': {
-        'main': {
+        'chefgpt': {
+            'handlers': ['console', 'file'],
+            'level': LOG_LEVEL,
+            'propagate': True,
+        },
+        'recipe_import': {
             'handlers': ['console', 'file'],
             'level': LOG_LEVEL,
             'propagate': True,
         }
     },
 }
-
 
 if not DEBUG:
     FORCE_SCRIPT_NAME = '/app'
