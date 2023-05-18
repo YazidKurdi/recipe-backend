@@ -38,13 +38,13 @@ class ChefGPT(APIView):
             gpt_response = re.sub(r"[^\x20-\x7E]+", "", generated_text)
 
             # Replace single quotes with double quotes in the generated text
-            gpt_response_quotes = gpt_response.replace("'", "\"")
+            # gpt_response_quotes = gpt_response.replace("'", "\"")
 
             # Convert the JSON-formatted generated text to a Python dictionary
-            gpt_response = json.loads(gpt_response_quotes)
+            gpt_response = json.loads(gpt_response)
 
             # Return the generated recipe as a JSON response
             return Response(json.dumps(gpt_response), status=status.HTTP_200_OK)
         except Exception as e:
-            logger.error(f"An error occurred: {str(e)}. gpt_response_quotes={gpt_response_quotes}")
+            logger.error(f"An error occurred: {str(e)}. gpt_response_quotes={generated_text}")
             return Response({'error': 'An error occurred.'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
