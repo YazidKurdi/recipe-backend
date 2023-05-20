@@ -2,10 +2,13 @@ import openai
 import dotenv
 import os
 
+from django.conf import settings
+
 dotenv.load_dotenv()
 
 openai.api_key = os.getenv("OPENAI")
 
+THROTTLE_RATE = int(settings.REST_FRAMEWORK['DEFAULT_THROTTLE_RATES']['chef_gpt'].split('/')[0])
 
 def get_recipe(recipe):
 
@@ -23,7 +26,7 @@ def get_recipe(recipe):
                     response ingredients format: array of objects [{name:string,unit:string,amount:string}]"
                               },
                   {"role": "user",
-                   "content": f"Hi my recipe needs a change. The description is: {recipe['description']} and the ingredients are: {recipe['ingredients']}"}]
+                   "content": f"The description is: {recipe['description']} and the ingredients are: {recipe['ingredients']}"}]
     )
 
     # Get the generated text from the response
